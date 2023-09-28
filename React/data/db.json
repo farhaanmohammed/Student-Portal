@@ -1,0 +1,9 @@
+{
+    "students": [
+        {"id": 1, "name": "Saki", "dob": "25-5-23", "class": "X12", "division": "A", "gender": "Male"},
+        {"id": 2, "name": "Aya", "dob": "15-8-24", "class": "IX", "division": "B", "gender": "Female"},
+        {"id": 3, "name": "Ryo", "dob": "28-10-22", "class": "XI", "division": "C", "gender": "Male"},
+        {"id": 4, "name": "Mika", "dob": "12-3-21", "class": "VIII", "division": "A", "gender": "Female"},
+        {"id": 5, "name": "Kazu", "dob": "10-7-23", "class": "IX", "division": "B", "gender": "Male"}
+    ]
+}

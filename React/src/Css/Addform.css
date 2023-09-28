@@ -1,0 +1,19 @@
+.addform{
+    
+    margin-left: 20px;
+    align-content: center;
+    /* flex-direction: row; */
+}
+.addform label {
+    display: block;
+    margin-bottom: 5px; /* Add margin between label and input */
+}
+
+.addform input {
+    /* width: 100%; Make the input fields span the entire width of their container */
+    padding: 5px; /* Add some padding for better appearance */
+    margin-bottom: 10px; /* Add margin between input fields */
+}
+.radio{
+    display: flex;
+}
