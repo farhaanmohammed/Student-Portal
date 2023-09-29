@@ -1,7 +1,7 @@
 import React from 'react';
 import { Box, Text } from '@chakra-ui/react';
 
-const Footer = () => {
+export default function  Footer  ()  {
     const currentYear = new Date().getFullYear();
 
     return (
@@ -21,4 +21,4 @@ const Footer = () => {
     );
 };
 
-export default Footer;
+

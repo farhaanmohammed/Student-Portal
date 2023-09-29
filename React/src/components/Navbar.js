@@ -5,7 +5,7 @@ import websiteImage from '../assets/school-icon.png'
 
 
 
-const Navbar = () => {
+export default function Navbar  ()  {
     return (
         <Box bg="#f0f7f4" color="#354c50" p={4} borderBottomRadius={'xl'} boxShadow={'-moz-initial'}>
             <Flex justify="space-between" align="center">
@@ -34,4 +34,4 @@ const Navbar = () => {
     );
 };
 
-export default Navbar;
+

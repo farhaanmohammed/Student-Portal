@@ -12,7 +12,8 @@ import {
     CardBody,
     CardHeader,
     Box,
-    Heading
+    Heading,
+    
 } from '@chakra-ui/react'
 
 
@@ -39,42 +40,50 @@ export default function View({ reload }){
 
     return(
         
-        <Card style={{ ...styles, boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)' }} >
+        <Card style={{ ...styles, boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)' }} maxWidth={{base:"100%",md:'100%'}}p={5}>
             <CardHeader>
                 <Heading size='2xl' style={styles}>Student Details</Heading>
             </CardHeader>
             <CardBody>
                 <Box>
-                    <TableContainer  p={5} overflowX="auto">
-                        <Table size={'lg'} height={"500px"} variant={'simple'}>
-                            
-                            <thead >
-                                <Tr>
-                                    <Th style={styles} fontWeight={'bold'}>Name</Th>
-                                    <Th style={styles} fontWeight={'bold'}>Admission Number</Th>
-                                    <Th style={styles} fontWeight={'bold'}>Date Of Birth</Th>
-                                    <Th style={styles} fontWeight={'bold'}>Class</Th>
-                                    <Th style={styles} fontWeight={'bold'}> Division</Th>
-                                    <Th style={styles} fontWeight={'bold'}>Gender</Th>
+                    {students.length===0 ? (
 
-                                </Tr>
+                        <Heading size={'md'} height={"600px"} style={styles}>No Records Available</Heading>
+
+                    ):(
+                        <TableContainer  p={5} paddingTop={'-10'} overflowX="auto">
+                            <Table size={'lg'} height={"582px"} variant={'simple'}>
                                 
-                            </thead>
-                            <tbody>
-                                {students.map((item)=>(
-                                    <Tr key={item.id}>
-                                        <Td>{item.studentName}</Td>
-                                        <Td>{item.admissionNo}</Td>
-                                        <Td>{item.dateofBirth}</Td>
-                                        <Td>{item.studentClass}</Td>
-                                        <Td>{item.studentDivision}</Td>
-                                        <Td>{item.studentgender}</Td>
+                                <thead >
+                                    <Tr>
+                                        <Th style={styles} fontWeight={'bold'}>Admission Number</Th>
+                                        <Th style={styles} fontWeight={'bold'}>Name</Th>
+                                        <Th style={styles} fontWeight={'bold'}>Date Of Birth</Th>
+                                        <Th style={styles} fontWeight={'bold'}>Class</Th>
+                                        <Th style={styles} fontWeight={'bold'}> Division</Th>
+                                        <Th style={styles} fontWeight={'bold'}>Gender</Th>
 
                                     </Tr>
-                                ))}
-                            </tbody>
-                        </Table>
-                    </TableContainer>
+                                    
+                                </thead>
+                                <tbody>
+                                    {students.map((item)=>(
+                                        <Tr key={item.id} style={{verticalAlign:'top'}}>
+                                            <Td>{item.admissionNo?item.admissionNo : "--"}</Td>
+                                            <Td>{item.studentName?item.studentName : "--"}</Td>
+                                            <Td>{item.dateofBirth?item.dateofBirth : "--"}</Td>
+                                            <Td>{item.studentClass?item.studentClass : "--"}</Td>
+                                            <Td>{item.studentDivision?item.studentDivision : "--"}</Td>
+                                            <Td>{item.studentgender?item.studentgender : "--"}</Td>
+
+                                        </Tr>
+                                    ))}
+                                </tbody>
+                            </Table>
+                        </TableContainer>
+
+                    )}
+                    
                 </Box>
                 
             </CardBody>
