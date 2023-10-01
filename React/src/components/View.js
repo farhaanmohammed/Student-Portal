@@ -40,7 +40,7 @@ export default function View({ reload }){
 
     return(
         
-        <Card style={{ ...styles, boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)' }} maxWidth={{base:"100%",md:'100%'}}p={5}>
+        <Card style={{ ...styles, boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)' }} maxWidth={{base:"100%",md:'100%'}}  p={5} >
             <CardHeader>
                 <Heading size='2xl' style={styles}>Student Details</Heading>
             </CardHeader>
@@ -48,11 +48,11 @@ export default function View({ reload }){
                 <Box>
                     {students.length===0 ? (
 
-                        <Heading size={'md'} height={"600px"} style={styles}>No Records Available</Heading>
+                        <Heading size={'md'} style={styles}>No Records Available</Heading>
 
                     ):(
-                        <TableContainer  p={5} paddingTop={'-10'} overflowX="auto">
-                            <Table size={'lg'} height={"582px"} variant={'simple'}>
+                        <TableContainer  p={5} paddingTop={'-10'}  overflowY="auto" maxHeight={"623px"}>
+                            <Table size={'lg'}  variant={'simple'}>
                                 
                                 <thead >
                                     <Tr>

@@ -35,9 +35,10 @@ function App() {
       <Heading style={styles}  as="h1" size="2xl" textAlign="center" margin={"40px"}>
         Welcome to Student Information Portal
       </Heading>
-      <SimpleGrid marginLeft={"30px"} columns={6} gridTemplateColumns={{base:'1fr 3fr',md:'2fr 4fr',lg:'2fr 4fr'}} display={{ base:'block',sm:'block',md:'block',lg:'grid'}} marginRight={"30px"} spacing={4}   justifyContent="center"  >
+      <SimpleGrid marginLeft={"30px"} columns={6} gridTemplateColumns={{base:'1fr 3fr',sm:'2fr 4fr',md:'2fr 4fr',lg:'2fr 4fr'}} display={{ base:'block',sm:'block',md:'block',lg:'block',xl:'grid'}}
+        marginRight={"30px"} spacing={4}   justifyContent="center" minChildWidth={"500px"} >
 
-        <Box marginBottom={{base:'20px',lg:'0px'}}>
+        <Box marginBottom={{base:'20px',lg:'0px'}} height={"800px"}>
           <Addform  onFormSubmit={handleFormSubmit}/>
         </Box>
         <Box>

@@ -14,12 +14,25 @@ public class StudentController {
     private StudentService studentService;
 
     @PostMapping(value = "/save")
-    private String savaStudent(@RequestBody Student student){
+    private String saveStudent(@RequestBody Student student) {
+        try {
+            if (student.getStudentName() == null || student.getStudentName().isBlank() ||
+                    student.getStudentClass() == null || student.getStudentClass().isBlank() ||
+                    student.getStudentDivision() == null || student.getStudentDivision().isBlank() ||
+                    student.getDateofBirth() == null || student.getDateofBirth().isBlank() ||
+                    student.getStudentgender() == null || student.getStudentgender().isBlank()) {
 
-        studentService.saveorUpdate(student);
-
-        return student.getId();
+                return "Input Error";
+            } else {
+                studentService.saveorUpdate(student);
+                return "Record added successfully";
+            }
+        } catch (Exception e) {
+            System.out.println("Exception in saving student details");
+            return "No data";
+        }
     }
+
 
     @GetMapping(value = "/getAll")
     private Iterable<Student> getStudents(){

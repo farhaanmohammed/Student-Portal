@@ -5,19 +5,33 @@ import com.mozanta.crud.Repo.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+
+import java.util.ArrayList;
+import java.util.List;
+
 @Service
 public class StudentService {
 
     @Autowired
     private StudentRepository repo;
     public void saveorUpdate(Student student) {
-        student.setAdmissionNo(generateNextAdmissionNo());
-        repo.save(student);
+            student.setAdmissionNo(generateNextAdmissionNo());
+            repo.save(student);
+
     }
 
-    public Iterable<Student> listAll() {
+    public List<Student> listAll() {
+        List students=new ArrayList();
+        students=this.repo.findAll();
+        if(!students.isEmpty() && students!=null )
+            return  students;
+        else    {
+            System.out.println("No Available Records");
+            return students;
 
-        return  this.repo.findAll();
+        }
+
+
     }
 
     private String generateNextAdmissionNo() {
