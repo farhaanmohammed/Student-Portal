@@ -36,7 +36,7 @@ This is a web application called "Student Portal" that allows users to manage st
    - Navigate to the frontend directory.
    - Install the dependencies using npm or yarn:
         ```bash
-        npm start
+        npm install
      
 
    - Start the React.js application:
