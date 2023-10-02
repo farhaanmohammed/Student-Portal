@@ -33,7 +33,7 @@ export default function Addform({ onFormSubmit }){
     const toast = useToast()
 
 
-    //function set the values to formdata
+    //function to set the values in formdata
     const handleChange = (event) => {
         
         const { name, value } = event.target;

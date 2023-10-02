@@ -11,7 +11,7 @@ export default function  Footer  ()  {
         textAlign="center"
         bg="f0f7f4"
         color="#008080"
-        borderTopRadius='xl' // Add border radius for a card-like appearance
+        borderTopRadius='xl' 
         
         width="100%"
         mt="auto"
