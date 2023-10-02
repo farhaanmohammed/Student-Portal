@@ -16,11 +16,7 @@ public class StudentController {
     @PostMapping(value = "/save")
     private String saveStudent(@RequestBody Student student) {
         try {
-            if (student.getStudentName() == null || student.getStudentName().isBlank() ||
-                    student.getStudentClass() == null || student.getStudentClass().isBlank() ||
-                    student.getStudentDivision() == null || student.getStudentDivision().isBlank() ||
-                    student.getDateofBirth() == null || student.getDateofBirth().isBlank() ||
-                    student.getStudentgender() == null || student.getStudentgender().isBlank()) {
+            if (isAnyStudentDetailsBlank(student)) {
 
                 return "Input Error";
             } else {
@@ -31,6 +27,15 @@ public class StudentController {
             System.out.println("Exception in saving student details");
             return "No data";
         }
+    }
+
+    //StudentData Validation
+    private static boolean isAnyStudentDetailsBlank(Student student) {
+        return student.getStudentName() == null || student.getStudentName().isBlank() ||
+                student.getStudentClass() == null || student.getStudentClass().isBlank() ||
+                student.getStudentDivision() == null || student.getStudentDivision().isBlank() ||
+                student.getDateofBirth() == null || student.getDateofBirth().isBlank() ||
+                student.getStudentgender() == null || student.getStudentgender().isBlank();
     }
 
 

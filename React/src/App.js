@@ -1,4 +1,5 @@
 import React from 'react';
+import { useState,useEffect } from 'react';
 import './App.css';
 import Navbar from './components/Navbar';
 import View from './components/View';
@@ -16,14 +17,14 @@ const styles = {
 
 
 function App() {
-  const [reloadView, setReloadView] = React.useState(false);
+  const [reloadView, setReloadView] = useState(false);
 
   const handleFormSubmit = () => {
     // Set reloadView to trigger a reload of the View component
     setReloadView(true);
   };
 
-  React.useEffect(() => {
+  useEffect(() => {
     // Reset the reload trigger after the View component reloads
     if (reloadView) {
       setReloadView(false);
@@ -38,7 +39,7 @@ function App() {
       <SimpleGrid marginLeft={"30px"} columns={6} gridTemplateColumns={{base:'1fr 3fr',sm:'1fr 3fr',md:'1fr 3fr',lg:'2fr 4fr'}} display={{ base:'block',sm:'block',md:'block',lg:'block',xl:'grid'}}
         marginRight={"30px"} spacing={4}   justifyContent="center" minChildWidth={"500px"} >
 
-        <Box marginBottom={{base:'20px',lg:'0px'}} height={"800px"}>
+        <Box marginBottom={{base:'20px',lg:'0px'}} height={"750px"}>
           <Addform  onFormSubmit={handleFormSubmit}/>
         </Box>
         <Box>

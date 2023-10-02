@@ -14,7 +14,8 @@ import {
     Box,
     Heading,
     
-} from '@chakra-ui/react'
+} from '@chakra-ui/react';
+import { baseUrl } from "./Url/baseUrl";
 
 
 const styles = {
@@ -28,14 +29,20 @@ const styles = {
 export default function View({ reload }){
     const [students, setStudents] = useState([]);
 
+    const StudentRecordsUrl=`${baseUrl}/getAll`;
+
+
+    //useffect to retrieve the student records from database
     useEffect(()=>{
-        axios.get('http://localhost:8080/api/v1/student/getAll').then(res=>{
+        axios.get(StudentRecordsUrl).then(res=>{
             console.log("respose",res.data)
             setStudents(res.data)
         }).catch(err=>console.log("error",err))
     },[reload])
 
         console.log("students",students)
+
+    
 
 
     return(
@@ -51,7 +58,7 @@ export default function View({ reload }){
                         <Heading size={'md'} style={styles}>No Records Available</Heading>
 
                     ):(
-                        <TableContainer  p={5} paddingTop={'-10'}  overflowY="auto" maxHeight={"623px"}>
+                        <TableContainer  p={5} paddingTop={'-10'}  overflowY="auto" maxHeight={"575px"}>
                             <Table size={'lg'}  variant={'simple'}>
                                 
                                 <thead >
