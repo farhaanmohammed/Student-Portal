@@ -43,7 +43,7 @@ function App() {
           <Addform  onFormSubmit={handleFormSubmit}/>
         </Box>
         <Box>
-          <View reload={reloadView}/>
+          <View reload={reloadView} onFormSubmit={handleFormSubmit}/>
         </Box>
       </SimpleGrid>
       <Footer/>
